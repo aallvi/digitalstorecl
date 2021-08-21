@@ -1,0 +1,85 @@
+html, body{
+    background-color: black;
+    color: beige;
+    
+}
+
+
+
+.img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 100px
+    
+}
+.navbar-nav{
+    margin-left: 120px;
+}
+
+.space{
+    
+    padding-left: 190px;
+    font-size: 20px;
+
+}
+
+.carrito {
+    
+    cursor: pointer;
+    margin:0px;
+    padding-left: 140px;
+}
+
+.collapse li  {
+    margin-right: 70px;
+}
+
+.catalogo img {
+
+    display:block;
+    
+    margin:auto;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    background-color: black !important;
+    color: beige;
+
+}
+
+.catalogo {
+    text-align: center;
+}
+
+.contenedor-catalogo h1{
+
+    margin-left: 50px;
+    margin-top: 20px;
+    
+}
+
+.contenedor-catalogo hr {
+    width:27%
+}
+
+.items{
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.img {
+    margin-right: 0px;
+}
+
+.img img {
+    width: 150px;
+}
+
+
+.card-body {
+    padding-top: 0px;
+}
+.row img {
+    margin-right: 15px;
+
+}
