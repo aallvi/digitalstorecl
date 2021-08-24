@@ -1,7 +1,6 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { catalogo } from './Catalogo'
-
 
 export const CategoriaProducto = () => {
 
@@ -41,7 +40,7 @@ export const CategoriaProducto = () => {
                  <p className="card-text"> 
                  Stock :{stock} </p>
            
-                
+                 <button type="button" className="btn btn-light"><Link to="/categorias" className="btn btn-light">  Atras </Link>   </button> 
         
                 
               </div>

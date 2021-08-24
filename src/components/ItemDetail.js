@@ -37,8 +37,9 @@ export const ItemDetail = (result) => {
                   {vencimiento} </p>
            
                 
-        
-                <Link to="/"> Atras </Link>
+                  <button type="button" className="btn btn-light"> 
+                <Link to="/" className="btn btn-light"> Atras </Link>
+                </button>
               </div>
 
             
