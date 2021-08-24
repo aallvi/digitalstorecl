@@ -71,15 +71,27 @@ html, body{
     margin-right: 0px;
 }
 
+.detalles img {
+    width: 280px!important ;
+
+}
+
 .img img {
     width: 150px;
+   
 }
 
 
 .card-body {
     padding-top: 0px;
+    padding-right: 0px;
+    margin-left: 20px;
 }
 .row img {
     margin-right: 15px;
 
+}
+
+.btn-light{
+    margin-left: 5px;
 }

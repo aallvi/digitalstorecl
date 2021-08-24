@@ -1,32 +1,53 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { Carrito } from './Carrito'
+
 
 export const NavBar = () => {
     return (
-       
+    
 
   <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container-fluid">
-                      <a className="navbar-brand" href="#">Digital Store</a>
+                      <Link className="navbar-brand" exact to="/" >Digital Store</Link>
                       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                       </button>
                <div className="collapse navbar-collapse space" >
                      <ul className="navbar-nav">
                           <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                          <Link className="nav-item nav-link"
+                                exact to="/"
+                          
+                          >
+                             Home
+                          </Link>
                           </li>
-                          <li className="nav-item">
-                            <a className="nav-link" href="#">Tienda</a>
-                          </li>
-                          <li className="nav-item">
-                            <a className="nav-link" href="#">Nosotros</a>
-                          </li>
+                          <li>
+                          <Link className="nav-item nav-link"
+                                exact to="/categorias"
+                          
+                          >
+                             Categorias
+                          </Link></li>
+                          
+                          <li>
+                          <Link className="nav-item nav-link"
+                                exact to="/nosotros"
+                          
+                          >
+                             Nosotros
+                          </Link></li>
+                          <li>
+                          <Link className="nav-item nav-link"
+                                exact to="/contacto"
+                          
+                          >
+                             Contacto
+                          </Link></li>
 
-                          <li className="nav-item">
-                            <a className="nav-link" href="#">Contacto</a>
-                          </li>
-              
+
+                      
 
                       </ul>
 
@@ -34,8 +55,8 @@ export const NavBar = () => {
 
                    </div>
               </div>
+              
 </nav>
-            
 
 
                

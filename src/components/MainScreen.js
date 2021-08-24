@@ -8,10 +8,6 @@ export const MainScreen = () => {
 
     return (
         <>
-
-         <NavBar />
-
-    
         
         <ItemListContainer/>
         
