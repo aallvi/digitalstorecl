@@ -94,4 +94,29 @@ html, body{
 
 .btn-light{
     margin-left: 5px;
+
+}
+
+
+.menu-detalles{
+    display: flex;
+}
+
+.cantidad{
+    margin-left: 28px;
+}
+
+.atras{
+ 
+    margin-top: 50px;
+    margin-left: 58px;
+
+
+}
+
+.finalizar{
+
+    margin-top: 50px;
+    margin-left: 58px;
+
 }

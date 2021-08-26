@@ -28,9 +28,9 @@ export const ItemList = ({id,title,description,url,price,stock}) => {
                  Stock :{stock} </p>
            
                 
-                 <button type="button" className="btn btn-light"> 
+                
                 <Link to={`/item-detail/${id}`} className="btn btn-light"> Mas Detalles </Link>
-                </button>
+                
               </div>
 
             

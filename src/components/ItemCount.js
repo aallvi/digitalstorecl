@@ -1,17 +1,17 @@
 import React, { Fragment, useState } from 'react'
 
- const Minecraft = 5
+ 
 
-export const ItemCount = () => {
+export const ItemCount = ({stock}) => {
 
     const [count, setCount] = useState(1)
-    const [stock, setStock] = useState(false)
+    // const [stock, setStock] = useState(false)
     const [maxStock, setMaxStock] = useState(false)
 
     
-  
 
-   
+    
+   console.log(count)
 
    const handleAdd = () => {
     
@@ -34,29 +34,8 @@ export const ItemCount = () => {
     return (
         <div className="items">
             
-            <h1> Minecraft  </h1>
+            <p className="cantidad">{count}</p>  
 
-            {/* <button
-            className="btn btn-primary"
-            onClick={handleLess}
-            disabled={stock}
-            >     - </button>
-                  {count}
-            <button
-            className="btn btn-primary"
-            onClick={handleAdd}
-            disabled={maxStock}
-            
-            >  + </button> */}
-
-
-
-
-
-
-
-            {count}
-             
             {  count ===1  ?(
                <Fragment>
                 <button 
@@ -75,9 +54,9 @@ export const ItemCount = () => {
                 </Fragment>
             ) 
             :
-              count > 1 && count <Minecraft  ? (
+              count > 1 && count <stock  ? (
               <Fragment>
-
+                
                 <button 
                             
                             className="btn btn-primary"
@@ -93,7 +72,7 @@ export const ItemCount = () => {
                 </button>
                 </Fragment>
 
-            ): count === Minecraft ? (
+            ): count === stock ? (
                <Fragment>
                 <button
                             
@@ -118,6 +97,7 @@ export const ItemCount = () => {
 
             }
            
+         
             
         </div>
     )

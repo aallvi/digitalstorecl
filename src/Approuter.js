@@ -5,6 +5,7 @@ import {
     Route,
     BrowserRouter
   } from "react-router-dom";
+import { Cart } from './components/Cart';
 import { CategoriaProducto } from './components/CategoriaProducto';
 import { Categorias } from './components/Categorias';
 import { Contacto } from './components/Contacto';
@@ -38,6 +39,9 @@ export const Approuter = () => {
           <Route exact path="/item-detail/:id">
           <ItemDetailContainer />
           </Route>
+
+          <Route exact path="/cart" component={Cart}/>
+
         
         </Switch>
       

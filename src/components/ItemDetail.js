@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ItemCount } from './ItemCount'
+import swal from 'sweetalert';
 
 
 export const ItemDetail = (result) => {
 
-
-
-    
-    
     let {description,title,url,price,stock,usar,vencimiento} =  result[0]
+
+    const [fin, setFin] = useState(false)
+
+     const agregado = ()=> {
+        swal("¡Listo!",  `${title} agregado al carrito!`, "success");
+
+        setFin(true)
+     }
+    
+     
+    
     
     // console.log(id)
  
@@ -36,10 +45,28 @@ export const ItemDetail = (result) => {
                  <p className="card-text"> 
                   {vencimiento} </p>
            
-                
-                  <button type="button" className="btn btn-light"> 
-                <Link to="/" className="btn btn-light"> Atras </Link>
+         <div className="menu-detalles">
+                  <button className="btn btn-light"
+                  onClick={agregado}> 
+                 Agregar al carrito 
                 </button>
+                
+                <ItemCount stock={stock} /> 
+                
+               
+                {fin ? <Link to="/cart" className="btn btn-success finalizar"> Finalizar Compra</Link> : null}
+                
+                
+
+              
+                <Link to="/" className="btn btn-light atras"> Atras </Link>
+
+                
+
+                
+         </div>
+
+
               </div>
 
             

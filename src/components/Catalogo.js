@@ -14,7 +14,7 @@ export const catalogo = [
     },
     {
       id: "2",
-      title: "Fortnite Neo Versa + 2000 Pavos",
+      title: "Neo Versa + 2000 Pavos",
       categoria: 'Fortnite',
       description: "PS4",
       stock: 5,

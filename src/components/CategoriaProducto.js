@@ -40,9 +40,13 @@ export const CategoriaProducto = () => {
                  <p className="card-text"> 
                  Stock :{stock} </p>
            
-                 <button type="button" className="btn btn-light"><Link to="/categorias" className="btn btn-light">  Atras </Link>   </button> 
+               <div className="menu-detalles"> </div>
+                <Link to="/categorias" className="btn btn-light">  Atras </Link>   
         
+                 
+                <Link to={`/item-detail/${id}`} className="btn btn-light"> Mas Detalles </Link>
                 
+
               </div>
 
             
