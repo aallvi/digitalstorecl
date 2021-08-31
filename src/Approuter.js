@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-    BrowserRouter as Router,
     Switch,
     Route,
     BrowserRouter
@@ -17,30 +16,34 @@ import { Nosotros } from './components/Nosotros';
 
 export const Approuter = () => {
     return (
+
+
         <BrowserRouter>
         <NavBar />
+
+
         <Switch>
 
-          <Route exact path="/">
-          <ItemListContainer/>
-          
-          </Route>
-          
+              <Route exact path="/">
+              <ItemListContainer/>
+              
+              </Route>
+              
 
-          
-          <Route exact path="/nosotros" component={Nosotros}/>
+              
+              <Route exact path="/nosotros" component={Nosotros}/>
 
-          <Route exact path="/contacto" component={Contacto}/>
+              <Route exact path="/contacto" component={Contacto}/>
 
-          <Route exact path="/categorias" component={Categorias}/>
+              <Route exact path="/categorias" component={Categorias}/>
 
-          <Route exact path="/category/:categoria" component={CategoriaProducto}/>
-           
-          <Route exact path="/item-detail/:id">
-          <ItemDetailContainer />
-          </Route>
+              <Route exact path="/category/:categoria" component={CategoriaProducto}/>
+              
+              <Route exact path="/item-detail/:id">
+              <ItemDetailContainer />
+              </Route>
 
-          <Route exact path="/cart" component={Cart}/>
+              <Route exact path="/cart" component={Cart}/>
 
         
         </Switch>

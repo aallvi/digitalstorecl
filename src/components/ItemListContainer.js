@@ -10,9 +10,6 @@ export const ItemListContainer = () => {
 
           <Items/>
 
-          {/* <img src={catalogo} alt="catalogo" width="950" height="450"/> */}
-
-          {/* <ItemCount/> */}
 
             
             

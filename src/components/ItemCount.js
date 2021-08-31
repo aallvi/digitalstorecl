@@ -1,17 +1,20 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useContext} from 'react'
+import { cartContext } from './useContext'
 
  
 
 export const ItemCount = ({stock}) => {
 
-    const [count, setCount] = useState(1)
+    const {count,setCount} = useContext(cartContext)
+
+    // const [count, setCount] = useState(1)
     // const [stock, setStock] = useState(false)
-    const [maxStock, setMaxStock] = useState(false)
+  
 
     
-
+  
     
-   console.log(count)
+//    console.log(count)
 
    const handleAdd = () => {
     

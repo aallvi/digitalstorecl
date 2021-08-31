@@ -7,14 +7,14 @@ export const ItemDetailContainer = () => {
 
    const id = useParams()
 
-   console.log('id', id)
+   
 
    const filt = id.id
 
 
     let result = catalogo.filter(catalogo => catalogo.id === filt)
 
-    console.log('result', result)
+    
 
     return (
         <>

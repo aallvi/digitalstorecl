@@ -1,15 +1,29 @@
-import React from 'react'
-import { ItemListContainer } from './ItemListContainer'
+import React, { useState } from 'react'
+import { Approuter } from '../Approuter'
 
-import { NavBar } from './NavBar'
+
+
+import { cartContext } from './useContext'
 
 export const MainScreen = () => {
+
+    const [carta, setCarta] = useState([])
+
+    const [count, setCount] = useState(1)
+
 
 
     return (
         <>
         
-        <ItemListContainer/>
+        <cartContext.Provider value= {{
+            carta,
+            setCarta,
+            count,
+            setCount
+        }}>
+        <Approuter />   
+        </cartContext.Provider>
         
             
         </>

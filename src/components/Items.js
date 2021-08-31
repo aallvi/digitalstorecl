@@ -13,7 +13,7 @@ export const Items = () => {
     useEffect(() => {
       new Promise((resolve, reject) => {
        
-        setTimeout(() => resolve(catalogo), 2000);
+        setTimeout(() => resolve(catalogo), 1);
 
       })
         .then((dataResolve) => {
@@ -26,7 +26,7 @@ export const Items = () => {
 
     }, []);
 
-    console.log(products)
+    
     return (
       <div className="row row-cols-1 row-cols-md-4 g-4 animate__animated animate__fadeIn items ">
         

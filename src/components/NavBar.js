@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Carrito } from './Carrito'
+import { cartContext } from './useContext'
 
 
 export const NavBar = () => {
+      
+
+      const {carta} = useContext(cartContext)
+
+    
+
     return (
     
 
@@ -51,7 +58,7 @@ export const NavBar = () => {
 
                       </ul>
 
-                      <Carrito/>
+                      <Carrito/> {carta.length === 0 ? null : <p className="bagg"> ({carta.length}) </p> } 
 
                    </div>
               </div>

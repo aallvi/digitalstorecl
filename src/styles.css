@@ -27,8 +27,8 @@ html, body{
 .carrito {
     
     cursor: pointer;
-    margin:0px;
-    padding-left: 140px;
+    margin-left:140px;
+    padding-left: 0px;
 }
 
 .collapse li  {
@@ -93,7 +93,7 @@ html, body{
 }
 
 .btn-light{
-    margin-left: 5px;
+   margin-left: 4px;
 
 }
 
@@ -119,4 +119,65 @@ html, body{
     margin-top: 50px;
     margin-left: 58px;
 
+}
+
+
+.volver {
+    margin-right: 40px;
+    
+}
+
+.contenedor-categorias{
+    margin-left: 50px;
+   
+
+}
+
+
+
+.carro {
+    color: red;
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.cartcarro{
+margin-left: 70px;
+margin-top: 40px;
+
+}
+
+.limpiarboton {
+    margin-top: 20px;
+    margin-left: 130px;
+}
+
+.cardcart{
+    width: 5%!important;
+    height: 100%!important;
+}
+
+
+.pago {
+    margin-left: 30px;
+}
+
+.disp {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.productocarrito{
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.btn-warning{
+    margin-left: 20px;
+  padding: 2px 7px
+}
+
+.bagg{
+    color:green;
+    margin: 0px;
 }

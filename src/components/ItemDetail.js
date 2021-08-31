@@ -1,25 +1,62 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { Link, useHistory } from 'react-router-dom'
 import { ItemCount } from './ItemCount'
 import swal from 'sweetalert';
+import { cartContext } from './useContext';
 
 
 export const ItemDetail = (result) => {
 
-    let {description,title,url,price,stock,usar,vencimiento} =  result[0]
+
+    const {carta,setCarta,count,setCount} = useContext(cartContext)
+
+    
+
+    let {description,title,url,price,stock,usar,vencimiento,id} =  result[0]
 
     const [fin, setFin] = useState(false)
 
      const agregado = ()=> {
-        swal("¡Listo!",  `${title} agregado al carrito!`, "success");
+
+       let arr = carta.find(elemento => elemento.id === id)
+
+       if (arr) {
+           return swal("Agregado", ` ${title} Ya fue añadido al carrito`, "warning");
+       }
+
+    
+
+        swal("¡Listo!", ` (${count}) ${title} agregado al carrito!`, "success");
 
         setFin(true)
+
+        const cantidad = count
+
+        setCarta(
+            [...carta, 
+                {title,
+                    id,
+                    url,
+                    cantidad,
+                    price
+                }])
+
+        setCount(1)
+
      }
     
-     
+
     
+
+
+
+
+    const history = useHistory()
+
+    const goBack = () => {
+        history.goBack()
+    }
     
-    // console.log(id)
  
     return (
         <>
@@ -27,7 +64,7 @@ export const ItemDetail = (result) => {
         <div className="row no-gutters">
             <div className="col-md-4">
                 <img src={url} className="card-img" alt= {title}  height='300px' />
-
+               
 
             </div>
           <div className="col-md-8">
@@ -58,9 +95,10 @@ export const ItemDetail = (result) => {
                 
                 
 
-              
-                <Link to="/" className="btn btn-light atras"> Atras </Link>
-
+              <button className="btn btn-light atras"
+              onClick={goBack}>
+                 Atras 
+              </button>
                 
 
                 
