@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { cartContext } from './useContext'
 
 export const Cart = () => {
@@ -35,19 +36,28 @@ export const Cart = () => {
 
 
         <div className="cartcarro">
-          {carta.length === 0 ? <p className="animate__animated animate__fadeIn carro"> Carrito Vacio </p> : carta.map((carta) => (
-          
-          <>
-          <div className="disp">
-          <img src={carta.url} className="card-img cardcart" alt= {carta.title}  height='300px'/>  
+          {carta.length === 0 ?
 
-          <p className="productocarrito"> ( {carta.cantidad} ) - {carta.title} $ {carta.price * carta.cantidad}
-          
-           <button onClick={ () => handleDelete(carta.id)}
-           className="btn btn-warning"
-           > x </button>  </p>   
+          <div className="carrito-vacio">
+         <p className="animate__animated animate__fadeIn carro"> Carrito Vacio
+         
+           </p> 
+
+            <Link className="btn btn-primary found" to="/"> Buscar Productos </Link>
           </div>
-         </>
+         : carta.map((carta) => (
+          
+                        <>
+                        <div className="disp">
+                        <img src={carta.url} className="card-img cardcart" alt= {carta.title}  height='300px'/>  
+
+                        <p className="productocarrito"> ( {carta.cantidad} ) - {carta.title} $ {carta.price * carta.cantidad}
+                        
+                        <button onClick={ () => handleDelete(carta.id)}
+                        className="btn btn-warning"
+                        > x </button>  </p>   
+                        </div>
+                      </>
         ) )}
 
 

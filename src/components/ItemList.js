@@ -31,6 +31,7 @@ export const ItemList = ({id,title,description,url,price,stock}) => {
                 
                 <Link to={`/item-detail/${id}`} className="btn btn-info"> Mas Detalles </Link>
                 
+                
               </div>
 
             

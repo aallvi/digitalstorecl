@@ -181,3 +181,15 @@ margin-top: 40px;
     color:green;
     margin: 0px;
 }
+
+.carrito-vacio{
+    display: block;
+}
+
+.block{
+    display:inline-block;
+}
+
+.found {
+    margin-left: 34px;
+}
