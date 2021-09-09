@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Approuter } from '../Approuter'
 
 import { collection,getDocs } from '@firebase/firestore'
@@ -13,8 +13,22 @@ export const MainScreen = () => {
 
     const [count, setCount] = useState(1)
 
-    
+    const [products, setProducts] = useState([]);
 
+    useEffect(() => {
+
+        const getProduct = async () => {
+          const productsCollection = collection(getData(), 'Producto' );
+          const productsSnapshot = await getDocs(productsCollection) ;
+          const productsList = productsSnapshot.docs.map(doc =>  ({id:doc.id, ...doc.data()}) );
+          
+          setProducts(productsList)
+          
+  
+        };
+          getProduct();
+  
+       }, [])
 
 
     return (
@@ -24,7 +38,9 @@ export const MainScreen = () => {
             carta,
             setCarta,
             count,
-            setCount
+            setCount,
+            products,
+            setProducts
         }}>
         <Approuter />   
         </cartContext.Provider>

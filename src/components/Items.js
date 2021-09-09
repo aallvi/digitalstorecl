@@ -1,30 +1,13 @@
-import React, { useEffect, useState } from 'react'
-import { catalogo } from './Catalogo';
+
+import React, { useContext } from 'react'
 import { ItemList } from './ItemList';
-
-
+import { cartContext } from './useContext'
 
 export const Items = () => {
 
 
     
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-      new Promise((resolve, reject) => {
-       
-        setTimeout(() => resolve(catalogo), 1);
-
-      })
-        .then((dataResolve) => {
-         
-          setProducts(dataResolve);
-        })
-        .catch((error) => {
-          console.log("err", error);
-        });
-
-    }, []);
+  const {products} = useContext(cartContext)
 
     
     return (

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 
 
-export const Mostrarcat = ({id,title,description,url,price,stock,categoria}) => {
+export const Mostrarcat = ({id,title,description,url,price,stock}) => {
 
   
 

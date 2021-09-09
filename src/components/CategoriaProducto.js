@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { catalogo } from './Catalogo'
 import { Mostrarcat } from './Mostrarcat'
+import { cartContext } from './useContext'
+
 
 export const CategoriaProducto = () => {
 
-    // const categoria = minecraft ? fortnite : null
-
-//    const Producto.categoria = useParams()
-
+    
+  const {products} = useContext(cartContext)
+    
+    
    const categoria = useParams()
 
-   let result = catalogo.filter(catalogo => catalogo.categoria === categoria.categoria)
+
+   let result = products.filter(catalogo => catalogo.categoria === categoria.categoria)
     
 
   
@@ -32,7 +34,7 @@ export const CategoriaProducto = () => {
                         <Mostrarcat 
                         key={result.id} 
                         {...result}
-                        categoria={categoria.categoria}
+                        categoria={categoria}
                         />
                     ) )
 
