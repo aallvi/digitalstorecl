@@ -11,21 +11,39 @@ import swal from 'sweetalert';
 export const Cart = () => {
 
     const {carta,setCarta} = useContext(cartContext)
+    const [cartafinal, setCartafinal] = useState([])
 
     const [loading, setLoading] = useState(false)
 
     const [listo, setListo] = useState(false)
 
     const [id, setId] = useState("")
+
+       
+        const [nombre, setNombre] = useState('')
+        const [email, setEmail] = useState('')
+        const [telefono, setTelefono] = useState('')
+
+        const onNombreChange =(e) => {
+          setNombre(e.target.value)
+        }
+
+        const onEmailChange =(e) => {
+          setEmail(e.target.value)
+        }
+
+        const onTelefonoChange =(e) => {
+          setTelefono(e.target.value)
+        }
     
    let history = useHistory()
 
     const apagar = carta.reduce((sum,value) => (sum + value.total), 0)  
 
     const userInfo ={
-      name: 'alvi',
-      mail: 'aleiva97@gmail.com',
-      phone: '+569 62121886'
+      name: nombre,
+      mail: email,
+      phone: telefono
     }
   
     const handleDelete = (id)=> {
@@ -37,7 +55,7 @@ export const Cart = () => {
       setCarta([])
       
     }
-
+    
     const handlePagar = async () => {
       setLoading(true)
       const docRef = await addDoc(collection(getData(), "orders"), {
@@ -54,8 +72,14 @@ export const Cart = () => {
       swal("¡Orden Creada!", `${userInfo.name} el ID de tu orden es "${docRef.id}".
            Porfavor guardalo y espera a que nos contactemos contigo!`, "success");
            setListo(true)
+
+           setCartafinal(carta)
+        
+        setCarta([])
      
     }
+
+    const pagarfinal = cartafinal.reduce((sum,value) => (sum + value.total), 0)
 
     const volver = () => {
       history.push("/")
@@ -63,18 +87,26 @@ export const Cart = () => {
       setCarta([])
     }
     
+ 
+
     
    
     return (
       <>
 
-      {listo === false ? <div className="contenedor-catalogo animate__animated animate__fadeIn">
+      {
+      
+      listo === false ?
+      
+      <div className="contenedor-catalogo animate__animated animate__fadeIn contenedor">
         <h1> Carrito {carta.length === 0 ? null :  <button onClick={handleClear}
           className="btn btn-danger animate__animated animate__fadeIn pago">  Limpiar Carrito </button>} </h1>
-     <hr />
+         <hr />
 
 
         <div className="cartcarro">
+          
+          <div className="carritofinal">
           {carta.length === 0 ?
 
               <div className="carrito-vacio">
@@ -86,62 +118,103 @@ export const Cart = () => {
                         <Link className="btn btn-primary found" to="/"> Buscar Productos </Link>
               </div>
 
-         : carta.map((carta) => (
+         :   carta.map((carta) => (
           
-                        <>
-                        <div className="disp">
-                        <img src={carta.url} className="card-img cardcart" alt= {carta.title}  height='300px'/>  
+                    
+                       
+                            <div className="disp">
+                                        <img src={carta.url} className="" alt= {carta.title} width="140px"  height='200px'/>  
 
-                        <p className="productocarrito"> ( {carta.cantidad} ) - {carta.title} $ {carta.price * carta.cantidad}
-                        
-                        <button onClick={ () => handleDelete(carta.id)}
-                        className="btn btn-warning"
-                        > x </button>  </p>   
-                        </div>
-                      </>
+                                        <p className="productocarrito"> ( {carta.cantidad} ) - {carta.title} $ {carta.price * carta.cantidad}
+                                        
+                                        <button onClick={ () => handleDelete(carta.id)}
+                                        className="btn btn-warning"
+                                        > x </button>  </p>   
+                            </div>
+                            
+
+
+
+                            
+                      
         ) )}
-
-
-
-        {
-           
-        carta.length === 0 ? null :  <div className="total">
-        <p>Total: <span> ${apagar}</span> </p>
-        <button onClick={handlePagar}
-        className="btn btn-success animate__animated animate__fadeIn limpiarboton"
-        disabled={loading}> Crear orden </button>
           </div>
+
+        {carta.length ===0 ? null :
+          <form className="form">
+            <p className="tituloform"> <span>Ingresa</span>  tus datos para contactarnos contigo y entregarte tu compra </p>
+                          <div className="form-group">
+                            <label for="exampleInputEmail1">Email</label>
+                            <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tu email"
+                            onChange={e => onEmailChange(e)} />
+                            
+                          </div>
+                          <div className="form-group">
+                            <label for="exampleName1">Nombre</label>
+                            <input type="text" className="form-control" id="name" placeholder="Tu nombre"
+                            onChange={e => onNombreChange(e)} />
+                          </div>
+                          <div className="form-group">
+                            <label for="exampleTelefono">Telefono</label>
+                            <input type="text" className="form-control" id="telefono" placeholder="+56 9 64345513"
+                            onChange={e => onTelefonoChange(e)} />
+                          </div>
+          
+    
+          </form>
+          
         }
 
+
+      
+
           </div>
+
+          {carta.length ===0 ? null :
+          <div className="total">
+                <p>Total: <span> ${apagar}</span> </p>
+                <button onClick={handlePagar}
+                className="btn btn-success animate__animated animate__fadeIn ordenbtn"
+                disabled={loading}> Crear orden </button>
+          </div>
+          
+        }
      
     </div> :
     
     
     
-     <div className="contenedor-catalogo animate__animated animate__fadeIn">
+     <div className="contenedor-catalogo animate__animated animate__fadeIn contenedor">
             <h1> Orden Final  </h1>
               <hr />
 
 
             <div className="cartcarro">
-            {carta.map((carta) => (
+              <div>
+            {cartafinal.map((carta) => (
               
                             <>
                             <div className="disp">
-                            <img src={carta.url} className="card-img cardcart" alt= {carta.title}  height='300px'/>  
+                            <img src={carta.url} className="" alt= {carta.title} width="140px" height='200px'/>  
 
                             <p className="productocarrito"> ( {carta.cantidad} ) - {carta.title} $ {carta.price * carta.cantidad}
                             
                             </p>   
                             </div>
+                            
                           </>
             ) )}
+            <div className="totalfinal">
+                <p>Total: <span> ${pagarfinal}</span> </p>
+               
+          </div>
+            </div>
       
                      <div className="fin">
-                          <p className="final"> {userInfo.name} tu ID de compra es {id} </p>
+                          <p className="final"> {userInfo.name} tu ID de compra es <span>"{id}"</span>  </p>
                           <p> Porfavor espera a que nos contactemos contigo para entregarte tus productos. </p>
                           <p> Tambien puedes contactarnos por Whatsapp si es que tienes alguna duda </p>
+                          
                           
                           <a href="https://wa.me/56962121886?text=Tengo%20una%20duda%20con%20mi%20compra" target="_blank"
                           className="btn btn-info animate__animated animate__fadeIn waza"
@@ -152,7 +225,7 @@ export const Cart = () => {
                           className="btn btn-success animate__animated animate__fadeIn seguircomprando"
                           onClick={volver}> Seguir comprando </button>
                      </div>
-
+                     
 
               </div>
         

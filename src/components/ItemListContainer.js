@@ -4,7 +4,7 @@ import { Items } from './Items'
 
 export const ItemListContainer = () => {
     return (
-        <div className="contenedor-catalogo animate__animated animate__fadeIn">
+        <div className="contenedor-catalogo animate__animated animate__fadeIn contenedor">
          <h1> Productos Destacados </h1>
          <hr />
 

@@ -10,7 +10,7 @@ html, body{
     margin-left: auto;
     margin-right: auto;
     display: block;
-    margin-top: 100px
+    margin-top: 150px
     
 }
 .navbar-nav{
@@ -142,9 +142,19 @@ html, body{
 }
 
 .cartcarro{
+display:grid;
+grid-template-columns: 2fr 3fr;
 margin-left: 70px;
 margin-top: 40px;
 
+}
+
+
+
+.contenedor{
+    margin-left: 200px;
+  
+    
 }
 
 .limpiarboton {
@@ -165,6 +175,8 @@ margin-top: 40px;
 .disp {
     display: flex;
     margin-bottom: 15px;
+margin-top: 15px;
+    padding-right: 0px;
 }
 
 .productocarrito{
@@ -194,14 +206,33 @@ margin-top: 40px;
     margin-left: 34px;
 }
 .total{
-    max-width: 500px;
+    max-width: 1200px;
     border-top: 1px solid;
     margin-top: 30px;
+    padding-left: 400px;
+}
+.totalfinal{
+    max-width: 550px;
+    border-top: 1px solid;
+    margin-top: 30px;
+    
 }
 
 .total span{
   color: rgb(17, 175, 3);
+  
 }
+.totalfinal span{
+    color: rgb(17, 175, 3);
+    
+  }
+
+  .totalfinal p{
+    margin-top: 20px;
+    margin-left: 240px;
+    
+    
+  }
 
 .total p{
   margin-top: 20px;
@@ -211,7 +242,7 @@ margin-top: 40px;
 
 .final{
     margin-top: 60px;
-    margin-left: 100px;
+    
 }
 
 .seguircomprando{
@@ -228,4 +259,33 @@ margin-top: 40px;
 
 .waza{
     margin-top: 50px;
+}
+
+.carta-formulario{
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form {
+    width: 350px;
+margin-bottom: 30px;
+}
+
+.ordenbtn{
+    margin-top: 20px;
+    margin-left: 130px;
+   
+}
+
+.tituloform span{
+    font-weight: bold;
+}
+
+.tituloform{
+    color: aqua;
+}
+
+.final span{
+    color: aqua;
 }
