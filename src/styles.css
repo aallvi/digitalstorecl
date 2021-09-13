@@ -193,3 +193,39 @@ margin-top: 40px;
 .found {
     margin-left: 34px;
 }
+.total{
+    max-width: 500px;
+    border-top: 1px solid;
+    margin-top: 30px;
+}
+
+.total span{
+  color: rgb(17, 175, 3);
+}
+
+.total p{
+  margin-top: 20px;
+    margin-left: 140px;
+    padding: 0px;
+}
+
+.final{
+    margin-top: 60px;
+    margin-left: 100px;
+}
+
+.seguircomprando{
+    margin-left: 180px;
+    margin-top: 50px;
+}
+
+.watsap{
+    background: none;
+    position: fixed;
+    top:90%;
+    right: 0.5%;
+}
+
+.waza{
+    margin-top: 50px;
+}

@@ -15,6 +15,8 @@ export const MainScreen = () => {
 
     const [products, setProducts] = useState([]);
 
+    const [orden, setOrden] = useState({})
+
     useEffect(() => {
 
         const getProduct = async () => {
@@ -40,7 +42,9 @@ export const MainScreen = () => {
             count,
             setCount,
             products,
-            setProducts
+            setProducts,
+            orden,
+            setOrden
         }}>
         <Approuter />   
         </cartContext.Provider>

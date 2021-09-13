@@ -38,18 +38,15 @@ export const ItemDetail = (result) => {
                     id,
                     url,
                     cantidad,
-                    price
+                    price,
+                    total: cantidad * price
+                    
                 }])
 
         setCount(1)
 
      }
     
-
-    
-
-
-
 
     const history = useHistory()
 

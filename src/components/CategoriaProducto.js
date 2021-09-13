@@ -15,7 +15,7 @@ export const CategoriaProducto = () => {
 
    let result = products.filter(catalogo => catalogo.categoria === categoria.categoria)
     
-
+   
   
    
     return (
