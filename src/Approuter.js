@@ -2,13 +2,13 @@ import React from 'react'
 import {
     Switch,
     Route,
-    BrowserRouter,
-    Link
+    BrowserRouter
   } from "react-router-dom";
 import { Cart } from './components/Cart';
 import { CategoriaProducto } from './components/CategoriaProducto';
 import { Categorias } from './components/Categorias';
 import { Contacto } from './components/Contacto';
+import { Footer } from './components/Footer';
 import { ItemDetailContainer } from './components/ItemDetailContainer';
 
 import { ItemListContainer } from './components/ItemListContainer';
@@ -51,6 +51,7 @@ export const Approuter = () => {
 
         
         </Switch>
+        <Footer/>
         <a href="https://wa.me/56962121886?text=Tengo%20una%20duda%20con%20mi%20compra" target="_blank" className="watsap">
       <img src={whatsapp}    />
       </a>

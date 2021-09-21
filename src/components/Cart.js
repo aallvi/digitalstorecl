@@ -10,35 +10,29 @@ import swal from 'sweetalert';
 
 export const Cart = () => {
 
-    const {carta,setCarta} = useContext(cartContext)
+    const {carta,setCarta}            = useContext(cartContext)
     const [cartafinal, setCartafinal] = useState([])
+    const [loading, setLoading]       = useState(false)
+    const [listo, setListo]           = useState(false)
+    const [id, setId]                 = useState("")
+    const [nombre, setNombre]         = useState('')
+    const [email, setEmail]           = useState('')
+    const [telefono, setTelefono]     = useState('')
 
-    const [loading, setLoading] = useState(false)
-
-    const [listo, setListo] = useState(false)
-
-    const [id, setId] = useState("")
-
-       
-        const [nombre, setNombre] = useState('')
-        const [email, setEmail] = useState('')
-        const [telefono, setTelefono] = useState('')
-
-        const onNombreChange =(e) => {
+    const onNombreChange =(e) => {
           setNombre(e.target.value)
         }
 
-        const onEmailChange =(e) => {
+    const onEmailChange =(e) => {
           setEmail(e.target.value)
         }
 
-        const onTelefonoChange =(e) => {
+    const onTelefonoChange =(e) => {
           setTelefono(e.target.value)
         }
     
-   let history = useHistory()
-
-    const apagar = carta.reduce((sum,value) => (sum + value.total), 0)  
+   let history  = useHistory()
+   const apagar = carta.reduce((sum,value) => (sum + value.total), 0)  
 
     const userInfo ={
       name: nombre,
@@ -98,15 +92,16 @@ export const Cart = () => {
       
       listo === false ?
       
-      <div className="contenedor-catalogo animate__animated animate__fadeIn contenedor">
-        <h1> Carrito {carta.length === 0 ? null :  <button onClick={handleClear}
+      <div className="animate__animated animate__fadeIn contenedor">
+        <h1 className="text-center carttitle mt-15"> Carrito {carta.length === 0 ? null :  <button onClick={handleClear}
           className="btn btn-danger animate__animated animate__fadeIn pago">  Limpiar Carrito </button>} </h1>
-         <hr />
+         
 
 
         <div className="cartcarro">
           
           <div className="carritofinal">
+
           {carta.length === 0 ?
 
               <div className="carrito-vacio">
@@ -146,18 +141,18 @@ export const Cart = () => {
                           <div className="form-group">
                             <label for="exampleInputEmail1">Email</label>
                             <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tu email"
-                            onChange={e => onEmailChange(e)} />
+                            onChange={e => onEmailChange(e)} required />
                             
                           </div>
                           <div className="form-group">
                             <label for="exampleName1">Nombre</label>
                             <input type="text" className="form-control" id="name" placeholder="Tu nombre"
-                            onChange={e => onNombreChange(e)} />
+                            onChange={e => onNombreChange(e)} required />
                           </div>
                           <div className="form-group">
                             <label for="exampleTelefono">Telefono</label>
                             <input type="text" className="form-control" id="telefono" placeholder="+56 9 64345513"
-                            onChange={e => onTelefonoChange(e)} />
+                            onChange={e => onTelefonoChange(e)} required  />
                           </div>
           
     
@@ -171,8 +166,9 @@ export const Cart = () => {
           </div>
 
           {carta.length ===0 ? null :
-          <div className="total">
+          <div className="total" >
                 <p>Total: <span> ${apagar}</span> </p>
+                
                 <button onClick={handlePagar}
                 className="btn btn-success animate__animated animate__fadeIn ordenbtn"
                 disabled={loading}> Crear orden </button>
@@ -184,9 +180,9 @@ export const Cart = () => {
     
     
     
-     <div className="contenedor-catalogo animate__animated animate__fadeIn contenedor">
-            <h1> Orden Final  </h1>
-              <hr />
+     <div className="animate__animated animate__fadeIn contenedor">
+            <h1 className="text-center"> Orden Final  </h1>
+              
 
 
             <div className="cartcarro">
@@ -205,7 +201,7 @@ export const Cart = () => {
                           </>
             ) )}
             <div className="totalfinal">
-                <p>Total: <span> ${pagarfinal}</span> </p>
+                <p className="pagofinal">Total: <span> ${pagarfinal}</span> </p>
                
           </div>
             </div>

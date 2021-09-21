@@ -9,21 +9,23 @@ export const NavBar = () => {
 
       const {carta} = useContext(cartContext)
 
-    
+     console.log(carta)
+
+     const totalcompra = carta.reduce((sum,value) => (sum + value.cantidad), 0) 
+
+     console.log(totalcompra)
 
     return (
     
 
-  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar navbar-expand-lg navbar-black bg-black contenedor-footer">
           <div className="container-fluid">
-                      <Link className="navbar-brand" exact to="/" >Digital Store</Link>
-                      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                      </button>
+                      <Link className="navbar-brand white" exact to="/" >Digital Store</Link>
+                   
                <div className="collapse navbar-collapse space" >
-                     <ul className="navbar-nav">
-                          <li className="nav-item">
-                          <Link className="nav-item nav-link"
+                     <ul className="navbar-nav barra">
+                          <li className="">
+                          <Link className="nav-link"
                                 exact to="/"
                           
                           >
@@ -31,7 +33,7 @@ export const NavBar = () => {
                           </Link>
                           </li>
                           <li>
-                          <Link className="nav-item nav-link"
+                          <Link className=" nav-link"
                                 exact to="/categorias"
                           
                           >
@@ -39,14 +41,14 @@ export const NavBar = () => {
                           </Link></li>
                           
                           <li>
-                          <Link className="nav-item nav-link"
+                          <Link className="nav-link"
                                 exact to="/nosotros"
                           
                           >
                              Nosotros
                           </Link></li>
                           <li>
-                          <Link className="nav-item nav-link"
+                          <Link className="nav-link"
                                 exact to="/contacto"
                           
                           >
@@ -58,7 +60,8 @@ export const NavBar = () => {
 
                       </ul>
 
-                      <Carrito/> {carta.length === 0 ? null : <p className="bagg"> ({carta.length}) </p> } 
+                      <Carrito/> 
+                      {carta.length === 0 ? null : <p className="bagg"> ({totalcompra}) </p> } 
 
                    </div>
               </div>

@@ -57,7 +57,7 @@ export const ItemDetail = (result) => {
  
     return (
         <>
-          <div className="ms-3 mt-5 animate__animated animate__fadeIn img detalles" style={{maxWidth:940}}>
+          <div className="contenedor detail animate__animated animate__fadeIn img detalles" style={{maxWidth:940}}>
         <div className="row no-gutters">
             <div className="col-md-4">
                 <img src={url} className="card-img" alt= {title}  height='300px' />
@@ -66,7 +66,7 @@ export const ItemDetail = (result) => {
             </div>
           <div className="col-md-8">
              <div className="card-body"> 
-             <h5 className="card-Title"> {title} </h5> 
+             <h3 className="card-Title"> {title} </h3> 
              <p className="card-text"> 
                  {description} </p>
             <p className="card-text"> 
@@ -80,7 +80,7 @@ export const ItemDetail = (result) => {
                   {vencimiento} </p>
            
          <div className="menu-detalles">
-                  <button className="btn btn-light"
+                  <button className="btn btn-primary"
                   onClick={agregado}> 
                  Agregar al carrito 
                 </button>

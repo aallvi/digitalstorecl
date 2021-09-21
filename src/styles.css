@@ -25,9 +25,9 @@ html, body{
 }
 
 .carrito {
-    
+    margin-right: 5px;
     cursor: pointer;
-    margin-left:140px;
+    margin-left: auto;
     padding-left: 0px;
 }
 
@@ -53,7 +53,6 @@ html, body{
 
 .contenedor-catalogo h1{
 
-    margin-left: 50px;
     margin-top: 20px;
     
 }
@@ -62,7 +61,7 @@ html, body{
     width:27%
 }
 
-.items{
+.itemscount{
     margin-left: 20px;
     margin-top: 15px;
 }
@@ -72,20 +71,17 @@ html, body{
 }
 
 .detalles img {
-    width: 280px!important ;
+    width: 250px ;
 
 }
 
-.img img {
-    width: 150px;
-   
-}
+
 
 
 .card-body {
     padding-top: 0px;
     padding-right: 0px;
-    margin-left: 20px;
+  
 }
 .row img {
     margin-right: 15px;
@@ -100,6 +96,7 @@ html, body{
 
 .menu-detalles{
     display: flex;
+  
 }
 
 .cantidad{
@@ -115,9 +112,11 @@ html, body{
 }
 
 .finalizar{
+width: 100px;
+height: 60px;
 
-    margin-top: 50px;
-    margin-left: 58px;
+margin-left: 30px;
+margin-top: 30px;
 
 }
 
@@ -128,33 +127,98 @@ html, body{
 }
 
 .contenedor-categorias{
-    margin-left: 50px;
+    
+   margin-left: 120px;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
    
 
 }
 
 
+.mb-20{
+    margin-bottom: 30px;
+}
+
+
+
+.justify-text{
+    text-align: justify;
+}
+
+.nosotros{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 80px;
+    font-size: 19px;
+    padding: 50px;
+}
+
+.digitalstore{
+    text-align: right;
+    color: rgb(0, 255, 229);
+}
+
+.nosotros img {
+    width: 500px;
+    border: violet 2px solid;
+}
+
+.nosotros p span {
+    color: rgb(102, 255, 0);
+}
+
+.nosotros ul {
+    line-height: 29px;
+}
+.nosotros li{
+    margin-top: 15px;
+}
 
 .carro {
     color: red;
     font-size: 20px;
-    margin-left: 50px;
+    text-align: center;
 }
 
 .cartcarro{
 display:grid;
-grid-template-columns: 2fr 3fr;
-margin-left: 70px;
-margin-top: 40px;
+grid-template-columns: 2fr 2fr;
 
+margin: 0 auto;
+grid-gap: 80px;
+
+}
+
+.mt-15{
+    margin-top: 15px;
+}
+
+.mt-10{
+    margin-top: 50px;
+}
+
+
+.contenedor{
+    border: aqua 2px solid;
+    max-width: 1400px;
+    margin: 10px auto;
+}
+
+.contenedor-portada{
+   
+    max-width: 1400px;
+    margin: 10px auto;
 }
 
 
 
-.contenedor{
-    margin-left: 200px;
-  
-    
+.contenedor-footer{
+   
+    max-width: 1400px;
+    margin: 10px auto;
 }
 
 .limpiarboton {
@@ -176,6 +240,7 @@ margin-top: 40px;
     display: flex;
     margin-bottom: 15px;
 margin-top: 15px;
+margin-left: 20px;
     padding-right: 0px;
 }
 
@@ -190,12 +255,14 @@ margin-top: 15px;
 }
 
 .bagg{
-    color:green;
+    margin-left: 10px;
+    color:rgb(0, 255, 0);
     margin: 0px;
 }
 
 .carrito-vacio{
-    display: block;
+    width: 200px;
+  margin-left: 600px;
 }
 
 .block{
@@ -203,14 +270,20 @@ margin-top: 15px;
 }
 
 .found {
-    margin-left: 34px;
+    margin: 0 auto;
+    margin-left: 25px;
+    margin-bottom: 20px;
 }
 .total{
-    max-width: 1200px;
+    width: 400px;
     border-top: 1px solid;
-    margin-top: 30px;
-    padding-left: 400px;
+   
+    margin: 0px auto;
+    padding: 0 auto;
 }
+
+
+
 .totalfinal{
     max-width: 550px;
     border-top: 1px solid;
@@ -219,11 +292,11 @@ margin-top: 15px;
 }
 
 .total span{
-  color: rgb(17, 175, 3);
+  color: rgb(38, 221, 21);
   
 }
 .totalfinal span{
-    color: rgb(17, 175, 3);
+    color: rgb(39, 255, 20);
     
   }
 
@@ -236,7 +309,8 @@ margin-top: 15px;
 
 .total p{
   margin-top: 20px;
-    margin-left: 140px;
+  margin-bottom: 0px;
+    text-align: center;
     padding: 0px;
 }
 
@@ -270,11 +344,15 @@ margin-top: 15px;
 .form {
     width: 350px;
 margin-bottom: 30px;
+
 }
 
+
 .ordenbtn{
+
     margin-top: 20px;
-    margin-left: 130px;
+    margin-bottom: 20px;
+    margin-left: 145px;
    
 }
 
@@ -288,4 +366,193 @@ margin-bottom: 30px;
 
 .final span{
     color: aqua;
+}
+
+
+
+.text-center{
+    text-align: center;
+}
+
+
+/* Contacto  */
+
+
+.contacto{
+
+    border: aqua 2px solid;
+    
+    margin: 10px auto;
+}
+
+.titulo-contacto{
+    margin-top: 10px;
+}
+
+.texto{
+    padding: 10px;
+    margin-top: 40px;
+    font-size: 19px;
+}
+
+.texto span {
+    color: greenyellow;
+    cursor: pointer;
+}
+
+.texto p {
+    text-align: center;
+}
+
+/* Formulario  */
+
+.formulario legend {
+    
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem;
+
+}
+
+.campo {
+display: flex;
+margin-left: 500px;
+margin-bottom: 2rem;
+
+}
+
+.campo label{
+flex-basis: 8rem;
+
+}
+
+.formulario fieldset {
+   justify-content: center;
+ 
+ }
+
+ .white{
+     color: white;
+ }
+ 
+ form .btn {
+     justify-content: center;
+ }
+
+ .formbtn{
+     margin-left: 630px;
+     margin-bottom:40px ;
+ }
+
+ .a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 0;
+    color: white;
+    width: 200px;
+}
+
+.grid-footer{
+    margin: 0 auto;
+ }
+
+ .grid-footer h3{
+    padding-bottom: 20px;
+ }
+
+ footer span{
+     color: aqua;
+ }
+
+
+
+
+.a:hover{
+    
+  color:rgb(0, 221, 250);
+  font-weight: bolder;
+}
+
+.grid-footer h3 {
+    text-align: center;
+}
+
+.grid-footer{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+ }
+ 
+.carritofinal{
+    margin: 0px auto;
+   
+}
+
+
+.carttitle{
+    margin-left: 0;
+    margin-bottom: 40px;
+}
+
+.productosdestacados{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 20px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.detail{
+    padding: 30px
+}
+
+.pagofinal{
+    font-size: 20px;
+}
+
+.bg-black li{
+    color: white!important;
+}
+
+
+.nav-link{
+    color: #ff00f7;
+    text-decoration: none;
+}
+
+
+.nav-link:hover{
+    color: rgb(255, 255, 255);
+}
+
+.categorycard{
+    height: 240px;
+    width: 302px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    border: orchid 1px solid;
+}
+
+.ml-120{
+  
+}
+
+.categorycard p:hover{
+    color: violet;
+
+}
+
+.tarjetascategoria{
+    text-decoration: none;
+    color: white;
+}
+
+.mt-1{
+    margin-top: 5px;
 }

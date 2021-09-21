@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useHistory } from 'react-router-dom'
 import { Mostrarcat } from './Mostrarcat'
 import { cartContext } from './useContext'
 
@@ -15,17 +15,21 @@ export const CategoriaProducto = () => {
 
    let result = products.filter(catalogo => catalogo.categoria === categoria.categoria)
     
-   
+   const history = useHistory()
+
+    const goBack = () => {
+        history.goBack()
+    }
   
    
     return (
         <>
-       <div className="contenedor-catalogo animate__animated animate__fadeIn">
+       <div className=" contenedor-catalogo animate__animated animate__fadeIn contenedor cont">
        
-       <h1> <Link to='/categorias' className="btn btn-dark volver">  Volver </Link> {categoria.categoria}  </h1> 
-                    <hr />
+       <h1 className="text-center"> <button onClick={goBack} className="btn btn-light volver">  Volver </button> {categoria.categoria}  </h1> 
+                   
 
-       <div className="row row-cols-1 row-cols-md-4 g-4 animate__animated animate__fadeIn items">
+       <div className="productosdestacados animate__animated animate__fadeIn items">
 
                 
                     

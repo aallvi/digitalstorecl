@@ -11,7 +11,7 @@ export const Items = () => {
 
     
     return (
-      <div className="row row-cols-1 row-cols-md-4 g-4 animate__animated animate__fadeIn items ">
+      <div className="productosdestacados animate__animated animate__fadeIn items ">
         
         {
            products.map((Producto) => (

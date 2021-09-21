@@ -35,7 +35,7 @@ export const ItemCount = ({stock}) => {
     
 
     return (
-        <div className="items">
+        <div className="itemscount">
             
             <p className="cantidad">{count}</p>  
 
