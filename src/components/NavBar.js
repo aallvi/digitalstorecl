@@ -19,7 +19,7 @@ export const NavBar = () => {
 
   <nav className="navbar navbar-expand-lg navbar-black bg-black contenedor-footer">
           <div className="container-fluid">
-                      <Link className="navbar-brand white" exact to="/" >   <img src={logo} alt="logo" width="130" height="90"/>    </Link>
+                      <Link className="navbar-brand white" exact to="/" >   <img src="https://i.ibb.co/rw5s0By/logo.jpg" alt="logo" width="130" height="90"/>    </Link>
                    
                <div className="collapse navbar-collapse barr" >
                      <ul className="navbar-nav barra">
