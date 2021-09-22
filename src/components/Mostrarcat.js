@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 export const Mostrarcat = ({id,title,description,url,price,stock}) => {
 
-  
+  console.log('aver',title,description)
 
 
  

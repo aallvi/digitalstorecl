@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, useParams, useHistory } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 import { Mostrarcat } from './Mostrarcat'
 import { cartContext } from './useContext'
 
@@ -21,7 +21,8 @@ export const CategoriaProducto = () => {
         history.goBack()
     }
   
-   
+
+
     return (
         <>
        <div className=" contenedor-catalogo animate__animated animate__fadeIn contenedor cont">
@@ -38,7 +39,7 @@ export const CategoriaProducto = () => {
                         <Mostrarcat 
                         key={result.id} 
                         {...result}
-                        categoria={categoria}
+                        
                         />
                     ) )
 

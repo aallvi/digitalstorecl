@@ -1,32 +1,43 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import { ItemDetail } from './ItemDetail';
 import { cartContext } from './useContext';
 
 export const ItemDetailContainer = () => {
 
-
+    const {products} = useContext(cartContext)
 
    const id = useParams()
 
    const filt = id.id
 
-   const {products} = useContext(cartContext)
 
     let result = products.filter(catalogo => catalogo.id === filt)
 
+        useEffect(() => {
+
+        
+            localStorage.setItem('result', JSON.stringify(result))
+
     
+
+        }, [result])
+
 
     return (
         <>
 
-        
-            <ItemDetail 
-            key={result.id} 
-            {...result}
-            
-            
-            />
+
+                  {
+                    result.map((result) => (
+                        <ItemDetail 
+                        key={result.id} 
+                        {...result}
+                        
+                        />
+                    ) )
+
+                    }
           
         </>
     )

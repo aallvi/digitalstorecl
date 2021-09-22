@@ -43,8 +43,8 @@ export const Nosotros = () => {
 
         <div>
 
-        <img src='https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2020/08/minecraft-2049381.jpg?itok=pp_uXh5y' />
-        <img src='https://cdn2.unrealengine.com/metaimage1-1920x1080-abb60090deaf.png' />
+        <img src='https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/1200/public/media/image/2020/08/minecraft-2049381.jpg?itok=pp_uXh5y' alt="minecraft" />
+        <img src='https://cdn2.unrealengine.com/metaimage1-1920x1080-abb60090deaf.png' alt="fortnite" />
 
         </div>
 

@@ -5,14 +5,14 @@ import swal from 'sweetalert';
 import { cartContext } from './useContext';
 
 
-export const ItemDetail = (result) => {
-
+export const ItemDetail = ({description,title,url,price,stock,usar,id}) => {
 
     const {carta,setCarta,count,setCount} = useContext(cartContext)
 
     
 
-    let {description,title,url,price,stock,usar,vencimiento,id} =  result[0]
+
+    // let {description,title,url,price,stock,usar,vencimiento,id} =  result[0]
 
     const [fin, setFin] = useState(false)
 
@@ -51,7 +51,14 @@ export const ItemDetail = (result) => {
     const history = useHistory()
 
     const goBack = () => {
+
+       
+        localStorage.removeItem('result');
+
+
         history.goBack()
+        
+       
     }
     
  
@@ -76,8 +83,7 @@ export const ItemDetail = (result) => {
              <p className="card-text"> 
                  ¿Como se Canjea? {usar} </p>
 
-                 <p className="card-text"> 
-                  {vencimiento} </p>
+                 
            
          <div className="menu-detalles">
                   <button className="btn btn-primary"

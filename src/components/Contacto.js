@@ -12,7 +12,9 @@ export const Contacto = () => {
           ¿Tienes alguna duda sobre las entregas? 
           ¿Quieres hacer una compra al por mayor?
       </p>
-      <p>Rellena el formulario de contacto o hablanos por <span>Whatsapp</span> para una comunicacion mas rapida</p>
+      <p>Rellena el formulario de contacto o hablanos por <Link to={{ pathname: "https://wa.me/56962121886?text=Tengo%20una%20duda%20con%20mi%20compra" }} target="_blank" className="textdecoration" > <span>Whatsapp</span>   </Link> para una comunicacion mas rapida</p>
+
+      
 
             </div>
 

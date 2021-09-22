@@ -548,6 +548,15 @@ flex-basis: 8rem;
 
 }
 
+.textdecoration{
+    text-decoration: none;
+}
+
+.barr {
+    font-size: 20px;
+    padding-left: 150px;
+}
+
 .tarjetascategoria{
     text-decoration: none;
     color: white;

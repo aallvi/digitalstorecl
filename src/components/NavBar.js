@@ -2,27 +2,26 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Carrito } from './Carrito'
 import { cartContext } from './useContext'
-
+import logo from '../images/logo.jpeg'
 
 export const NavBar = () => {
       
 
       const {carta} = useContext(cartContext)
 
-     console.log(carta)
 
      const totalcompra = carta.reduce((sum,value) => (sum + value.cantidad), 0) 
 
-     console.log(totalcompra)
+     
 
     return (
     
 
   <nav className="navbar navbar-expand-lg navbar-black bg-black contenedor-footer">
           <div className="container-fluid">
-                      <Link className="navbar-brand white" exact to="/" >Digital Store</Link>
+                      <Link className="navbar-brand white" exact to="/" >   <img src={logo} alt="logo" width="130" height="90"/>    </Link>
                    
-               <div className="collapse navbar-collapse space" >
+               <div className="collapse navbar-collapse barr" >
                      <ul className="navbar-nav barra">
                           <li className="">
                           <Link className="nav-link"

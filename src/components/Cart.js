@@ -117,7 +117,7 @@ export const Cart = () => {
           
                     
                        
-                            <div className="disp">
+                            <div className="disp" key={carta.id}>
                                         <img src={carta.url} className="" alt= {carta.title} width="140px"  height='200px'/>  
 
                                         <p className="productocarrito"> ( {carta.cantidad} ) - {carta.title} $ {carta.price * carta.cantidad}
@@ -139,20 +139,20 @@ export const Cart = () => {
           <form className="form">
             <p className="tituloform"> <span>Ingresa</span>  tus datos para contactarnos contigo y entregarte tu compra </p>
                           <div className="form-group">
-                            <label for="exampleInputEmail1">Email</label>
+                            <label htmlFor="exampleInputEmail1">Email</label>
                             <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tu email"
-                            onChange={e => onEmailChange(e)} required />
+                            onChange={e => onEmailChange(e)} />
                             
                           </div>
                           <div className="form-group">
-                            <label for="exampleName1">Nombre</label>
+                            <label htmlFor="exampleName1">Nombre</label>
                             <input type="text" className="form-control" id="name" placeholder="Tu nombre"
-                            onChange={e => onNombreChange(e)} required />
+                            onChange={e => onNombreChange(e)}  />
                           </div>
                           <div className="form-group">
-                            <label for="exampleTelefono">Telefono</label>
+                            <label htmlFor="exampleTelefono">Telefono</label>
                             <input type="text" className="form-control" id="telefono" placeholder="+56 9 64345513"
-                            onChange={e => onTelefonoChange(e)} required  />
+                            onChange={e => onTelefonoChange(e)}   />
                           </div>
           
     
@@ -212,9 +212,9 @@ export const Cart = () => {
                           <p> Tambien puedes contactarnos por Whatsapp si es que tienes alguna duda </p>
                           
                           
-                          <a href="https://wa.me/56962121886?text=Tengo%20una%20duda%20con%20mi%20compra" target="_blank"
+                          <Link to={{ pathname: "https://wa.me/56962121886?text=Tengo%20una%20duda%20con%20mi%20compra" }} target="_blank"
                           className="btn btn-info animate__animated animate__fadeIn waza"
-                          > Contactar por Whatsapp </a>
+                          > Contactar por Whatsapp </Link>
 
 
                           <button 

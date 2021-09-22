@@ -9,7 +9,10 @@ import { cartContext } from './useContext'
 
 export const MainScreen = () => {
 
-    const [carta, setCarta] = useState([])
+
+   
+
+    const [carta, setCarta] = useState(JSON.parse(localStorage.getItem('carta')) || [])
 
     const [count, setCount] = useState(1)
 
@@ -18,6 +21,7 @@ export const MainScreen = () => {
     const [orden, setOrden] = useState({})
 
     useEffect(() => {
+
 
         const getProduct = async () => {
           const productsCollection = collection(getData(), 'Producto' );
@@ -31,6 +35,15 @@ export const MainScreen = () => {
           getProduct();
   
        }, [])
+
+    useEffect(() => {
+
+       
+            localStorage.setItem('carta', JSON.stringify(carta))
+
+       
+
+    }, [carta])
 
 
     return (
