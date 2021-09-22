@@ -24,7 +24,7 @@ export const Approuter = () => {
     return (
 
 
-        <BrowserRouter>
+        <BrowserRouter basename="/digitalstorecl">
         <NavBar />
 
 
