@@ -565,3 +565,24 @@ flex-basis: 8rem;
 .mt-1{
     margin-top: 5px;
 }
+
+
+.validar{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.formularioExitoso {
+    text-align: center;
+    color: rgb(0, 255, 0);
+    font-size: 20px;
+}
+
+.invalidContacto{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    margin-bottom: 30px;
+}

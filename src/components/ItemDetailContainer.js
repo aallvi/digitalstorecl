@@ -1,27 +1,31 @@
-import React, { useContext, useEffect} from 'react'
-import { useParams } from 'react-router-dom';
+import React, { useContext} from 'react'
+import { useParams,Redirect } from 'react-router-dom';
 import { ItemDetail } from './ItemDetail';
 import { cartContext } from './useContext';
 
 export const ItemDetailContainer = () => {
-
+    const id = useParams()
     const {products} = useContext(cartContext)
-
-   const id = useParams()
-
-   const filt = id.id
+    const filt = id.id
+  
 
 
     let result = products.filter(catalogo => catalogo.id === filt)
-
-        useEffect(() => {
-
-        
-            localStorage.setItem('result', JSON.stringify(result))
-
+   
+    console.log(result)
+      
     
 
-        }, [result])
+   
+  
+
+   if(result.length === 0){
+       return <Redirect to="/producto-no-existe" />
+   }
+
+   
+
+ 
 
 
     return (

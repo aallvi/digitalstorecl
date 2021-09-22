@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams, useHistory,Redirect } from 'react-router-dom'
 import { Mostrarcat } from './Mostrarcat'
 import { cartContext } from './useContext'
 
@@ -8,19 +8,23 @@ export const CategoriaProducto = () => {
 
     
   const {products} = useContext(cartContext)
-    
+  const history = useHistory()
+
+  const goBack = () => {
+      history.goBack()
+  }
+
     
    const categoria = useParams()
 
 
    let result = products.filter(catalogo => catalogo.categoria === categoria.categoria)
-    
-   const history = useHistory()
 
-    const goBack = () => {
-        history.goBack()
-    }
-  
+   if(result.length === 0){
+    return <Redirect to="/categoria-no-existe" />
+}
+    
+   
 
 
     return (

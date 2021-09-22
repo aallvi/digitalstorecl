@@ -8,7 +8,9 @@ import swal from 'sweetalert';
 
 
 
+
 export const Cart = () => {
+    
 
     const {carta,setCarta}            = useContext(cartContext)
     const [cartafinal, setCartafinal] = useState([])
@@ -17,7 +19,9 @@ export const Cart = () => {
     const [id, setId]                 = useState("")
     const [nombre, setNombre]         = useState('')
     const [email, setEmail]           = useState('')
+    const [remail, setRemail]           = useState('')
     const [telefono, setTelefono]     = useState('')
+    const [invalid, setInvalid] = useState(false)
 
     const onNombreChange =(e) => {
           setNombre(e.target.value)
@@ -27,12 +31,16 @@ export const Cart = () => {
           setEmail(e.target.value)
         }
 
+        const onRemailChange =(e) => {
+          setRemail(e.target.value)
+        }
+
     const onTelefonoChange =(e) => {
           setTelefono(e.target.value)
         }
     
-   let history  = useHistory()
-   const apagar = carta.reduce((sum,value) => (sum + value.total), 0)  
+        let history  = useHistory()
+        const apagar = carta.reduce((sum,value) => (sum + value.total), 0)  
 
     const userInfo ={
       name: nombre,
@@ -51,6 +59,17 @@ export const Cart = () => {
     }
     
     const handlePagar = async () => {
+
+      if( nombre === '' || email === '' || telefono === '' || remail === '' || email !== remail){
+
+        return setInvalid(true)
+
+
+      }
+         setInvalid(false)
+
+
+
       setLoading(true)
       const docRef = await addDoc(collection(getData(), "orders"), {
         cliente: userInfo,
@@ -138,10 +157,19 @@ export const Cart = () => {
         {carta.length ===0 ? null :
           <form className="form">
             <p className="tituloform"> <span>Ingresa</span>  tus datos para contactarnos contigo y entregarte tu compra </p>
+                         
+                    {invalid ? <p className="validar">  Debes rellenar todos los campos y los emails deben ser iguales </p> : null }
+                         
                           <div className="form-group">
                             <label htmlFor="exampleInputEmail1">Email</label>
                             <input type="text" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tu email"
                             onChange={e => onEmailChange(e)} />
+                            </div>
+
+                            <div className="form-group">
+                            <label htmlFor="exampleInputEmail1">Re escribe tu Email</label>
+                            <input type="text" className="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Tu email"
+                            onChange={e => onRemailChange(e)} />
                             
                           </div>
                           <div className="form-group">
@@ -176,7 +204,7 @@ export const Cart = () => {
           
         }
      
-    </div> :
+    </div> :   
     
     
     

@@ -28,7 +28,7 @@ export const Footer = () => {
 
                         <nav className="footer-menu">
                             <Link to="/nosotros"  className="a">Nosotros</Link>
-                            <Link  className="a"> Mision, Vision y Valores </Link>
+                            {/* <Link  className="a"> Mision, Vision y Valores </Link> */}
                
 
                         </nav>
@@ -40,7 +40,7 @@ export const Footer = () => {
                         <h3>Soporte</h3>
                     <nav className="footer-menu">
                             <Link to="/contacto" className="a">Contacto </Link>
-                            <Link className="a"> Preguntas Frecuentes </Link>
+                            {/* <Link className="a"> Preguntas Frecuentes </Link> */}
         
                     
                     </nav>
