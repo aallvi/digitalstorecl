@@ -2,10 +2,11 @@ import React from 'react'
 import {
     Switch,
     Route,
-    BrowserRouter,
+    BrowserRouter as Router,
     Link,
     Redirect
   } from "react-router-dom";
+
 import { Cart } from './components/Cart';
 import { Categoriaerror } from './components/Categoriaerror';
 import { CategoriaProducto } from './components/CategoriaProducto';
@@ -13,18 +14,18 @@ import { Categorias } from './components/Categorias';
 import { Contacto } from './components/Contacto';
 import { Footer } from './components/Footer';
 import { ItemDetailContainer } from './components/ItemDetailContainer';
-
 import { ItemListContainer } from './components/ItemListContainer';
 import { NavBar } from './components/NavBar';
 import { Nosotros } from './components/Nosotros';
 import { Productoerror } from './components/Productoerror';
 import whatsapp from './images/whatsapp.png'
 
+
 export const Approuter = () => {
     return (
 
 
-        <BrowserRouter basename="/digitalstorecl">
+        <Router basename="/digitalstorecl">
         <NavBar />
 
 
@@ -72,6 +73,6 @@ export const Approuter = () => {
 
 
     
-        </BrowserRouter>
+        </Router>
     )
 }
