@@ -70,7 +70,7 @@ const [invalid, setInvalid] = useState(false)
           ¿Tienes alguna duda sobre las entregas? 
           ¿Quieres hacer una compra al por mayor?
       </p>
-      <p>Rellena el formulario de contacto o hablanos por <Link to={{ pathname: "https://wa.me/56962121886?text=Tengo%20una%20duda%20con%20mi%20compra" }} target="_blank" className="textdecoration" > <span>Whatsapp</span>   </Link> para una comunicacion mas rapida</p>
+      <p>Rellena el formulario de contacto o hablanos por  <a href="https://wa.me/56962121886?text=Tengo%20una%20duda%20con%20mi%20compra"  target="_blank" className="textdecoration">    <span>Whatsapp</span>   </a> para una comunicacion mas rapida</p>
 
       
 

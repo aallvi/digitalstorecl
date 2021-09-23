@@ -240,9 +240,7 @@ export const Cart = () => {
                           <p> Tambien puedes contactarnos por Whatsapp si es que tienes alguna duda </p>
                           
                           
-                          <Link to={{ pathname: "https://wa.me/56962121886?text=Tengo%20una%20duda%20con%20mi%20compra" }} target="_blank"
-                          className="btn btn-info animate__animated animate__fadeIn waza"
-                          > Contactar por Whatsapp </Link>
+                          <a href="https://wa.me/56962121886?text=Tengo%20una%20duda%20con%20mi%20compra"  target="_blank" className="btn btn-info animate__animated animate__fadeIn waza"> Contactar por Whatsapp </a>
 
 
                           <button 
@@ -264,3 +262,5 @@ export const Cart = () => {
 
     
 }
+
+
