@@ -1,9 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import bag from '../images/bag.png'
 
 export const Carrito = () => {
-    "/cart"
+    
     
     return (
         <div className="carrito">

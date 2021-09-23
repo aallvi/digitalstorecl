@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Carrito } from './Carrito'
 import { cartContext } from './useContext'
-import logo from '../images/logo.jpeg'
+
 
 export const NavBar = () => {
       

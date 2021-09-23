@@ -8,11 +8,11 @@ Puedes visitarlo online [aqui](https://aallvi.github.io/digitalstorecl/).
 ### `npm i` - Para instalacion de dependencias
 
 
-### `npm start` - Corre la aplicación localmente en [http://localhost:3000](http://localhost:3000) :
+### `npm start` - Corre la aplicación localmente en [http://localhost:3000](http://localhost:3000)
 
 
 
-### `npm build` - Para buildear la app en modo produccion
+### `npm run build` - Para buildear la app en modo produccion
 
 
 

@@ -58,7 +58,7 @@ export const Approuter = () => {
 
 
 
-              <Redirect to="/"  />
+              
 
         
 
