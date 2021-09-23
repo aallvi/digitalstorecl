@@ -9,10 +9,7 @@ export const ItemDetail = ({description,title,url,price,stock,usar,id}) => {
 
     const {carta,setCarta,count,setCount} = useContext(cartContext)
 
-    
 
-
-    // let {description,title,url,price,stock,usar,vencimiento,id} =  result[0]
 
     const [fin, setFin] = useState(false)
 
@@ -60,6 +57,10 @@ export const ItemDetail = ({description,title,url,price,stock,usar,id}) => {
         setCount(1)
        
     }
+
+   
+
+   
     
  
     return (

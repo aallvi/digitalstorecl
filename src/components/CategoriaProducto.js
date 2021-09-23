@@ -7,7 +7,7 @@ import { cartContext } from './useContext'
 export const CategoriaProducto = () => {
 
     
-  const {products} = useContext(cartContext)
+  const {products,loading} = useContext(cartContext)
   const history = useHistory()
 
   const goBack = () => {
@@ -15,23 +15,28 @@ export const CategoriaProducto = () => {
   }
 
     
-   const categoria = useParams()
+   const {categoria} = useParams()
 
 
-   let result = products.filter(catalogo => catalogo.categoria === categoria.categoria)
+   let result = products.filter(catalogo => catalogo.categoria === categoria)
 
-   if(result.length === 0){
+   if (result.length === 0 && loading === false ) {
+            
     return <Redirect to="/categoria-no-existe" />
-}
+     
+  }
     
    
 
 
     return (
         <>
-       <div className=" contenedor-catalogo animate__animated animate__fadeIn contenedor cont">
+
+        {result.length === 0 ? null : 
+        
+        <>   <div className=" contenedor-catalogo animate__animated animate__fadeIn contenedor cont">
        
-       <h1 className="text-center"> <button onClick={goBack} className="btn btn-light volver">  Volver </button> {categoria.categoria}  </h1> 
+       <h1 className="text-center"> <button onClick={goBack} className="btn btn-light volver">  Volver </button>  {categoria}  </h1> 
                    
 
        <div className="productosdestacados animate__animated animate__fadeIn items">
@@ -52,6 +57,9 @@ export const CategoriaProducto = () => {
 
        </div>
 
+        </>}
+
         </>
+      
     )
 }

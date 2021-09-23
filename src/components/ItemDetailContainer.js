@@ -4,28 +4,28 @@ import { ItemDetail } from './ItemDetail';
 import { cartContext } from './useContext';
 
 export const ItemDetailContainer = () => {
-    const id = useParams()
-    const {products} = useContext(cartContext)
-    const filt = id.id
+    const {id} = useParams()
+
+    const {products,loading} = useContext(cartContext)
   
-
-
-    let result = products.filter(catalogo => catalogo.id === filt)
-   
-    console.log(result)
-      
     
 
-   
+    let result = products.filter(catalogo => catalogo.id === id)
+
+
+
+
+        if (result.length === 0 && loading === false ) {
+            
+           return <Redirect to="/producto-no-existe" />
+            
+         }
+        
+ 
+
   
 
-   if(result.length === 0){
-       return <Redirect to="/producto-no-existe" />
-   }
 
-   
-
- 
 
 
     return (

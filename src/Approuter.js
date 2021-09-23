@@ -26,7 +26,7 @@ export const Approuter = () => {
     return (
 
 
-        <HashRouter basename="/digitalstorecl">
+        <HashRouter basename="/">
         <NavBar />
 
 

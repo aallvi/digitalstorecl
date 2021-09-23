@@ -20,9 +20,11 @@ export const MainScreen = () => {
 
     const [orden, setOrden] = useState({})
 
+    const [loading, setLoading] = useState(true)
+
     useEffect(() => {
 
-
+       
         const getProduct = async () => {
           const productsCollection = collection(getData(), 'Producto' );
           const productsSnapshot = await getDocs(productsCollection) ;
@@ -30,10 +32,11 @@ export const MainScreen = () => {
           
           setProducts(productsList)
           
-  
+          setLoading(false)
         };
           getProduct();
-  
+
+         
        }, [])
 
     useEffect(() => {
@@ -57,7 +60,9 @@ export const MainScreen = () => {
             products,
             setProducts,
             orden,
-            setOrden
+            setOrden,
+            loading,
+            setLoading
         }}>
         <Approuter />   
         </cartContext.Provider>
