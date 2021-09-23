@@ -25,7 +25,7 @@ export const Approuter = () => {
     return (
 
 
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router basename="/digitalstorecl">
         <NavBar />
 
 
