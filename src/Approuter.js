@@ -4,7 +4,8 @@ import {
     Route,
     BrowserRouter as Router,
     Link,
-    Redirect
+    Redirect,
+    HashRouter
   } from "react-router-dom";
 
 import { Cart } from './components/Cart';
@@ -25,7 +26,7 @@ export const Approuter = () => {
     return (
 
 
-        <Router basename="/digitalstorecl">
+        <HashRouter basename="/digitalstorecl">
         <NavBar />
 
 
@@ -73,6 +74,6 @@ export const Approuter = () => {
 
 
     
-        </Router>
+        </HashRouter>
     )
 }
