@@ -53,8 +53,8 @@ export const Approuter = () => {
 
               <Route exact path="/cart" component={Cart}/>
 
-              <Route path="/digitalstorecl/producto-no-existe" component={Productoerror} />
-              <Route path="/digitalstorecl/categoria-no-existe" component={Categoriaerror} />
+              <Route path="/producto-no-existe" component={Productoerror} />
+              <Route path="/categoria-no-existe" component={Categoriaerror} />
 
 
 
