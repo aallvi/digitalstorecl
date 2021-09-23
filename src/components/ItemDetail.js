@@ -57,7 +57,7 @@ export const ItemDetail = ({description,title,url,price,stock,usar,id}) => {
 
 
         history.goBack()
-        
+        setCount(1)
        
     }
     
