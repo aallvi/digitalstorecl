@@ -1,49 +1,13 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { ItemCount } from './ItemCount'
-import swal from 'sweetalert';
 import { cartContext } from './useContext';
+
 
 
 export const ItemDetail = ({description,title,url,price,stock,usar,id}) => {
 
-    const {carta,setCarta,count,setCount} = useContext(cartContext)
-
-
-
-    const [fin, setFin] = useState(false)
-
-     const agregado = ()=> {
-
-       let arr = carta.find(elemento => elemento.id === id)
-
-       if (arr) {
-           return swal("Agregado", ` ${title} Ya fue añadido al carrito`, "warning");
-       }
-
-    
-
-        swal("¡Listo!", ` (${count}) ${title} agregado al carrito!`, "success");
-
-        setFin(true)
-
-        const cantidad = count
-
-        setCarta(
-            [...carta, 
-                {title,
-                    id,
-                    url,
-                    cantidad,
-                    price,
-                    total: cantidad * price
-                    
-                }])
-
-        setCount(1)
-
-     }
-    
+    const {setCount,addItem,fin} = useContext(cartContext)
 
     const history = useHistory()
 
@@ -58,11 +22,8 @@ export const ItemDetail = ({description,title,url,price,stock,usar,id}) => {
        
     }
 
-   
 
-   
-    
- 
+
     return (
         <>
           <div className="contenedor detail animate__animated animate__fadeIn img detalles" style={{maxWidth:940}}>
@@ -88,7 +49,7 @@ export const ItemDetail = ({description,title,url,price,stock,usar,id}) => {
            
          <div className="menu-detalles">
                   <button className="btn btn-primary"
-                  onClick={agregado}> 
+                  onClick={() => addItem(title,url,price,id)}> 
                  Agregar al carrito 
                 </button>
                 

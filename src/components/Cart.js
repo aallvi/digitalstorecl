@@ -12,7 +12,7 @@ import swal from 'sweetalert';
 export const Cart = () => {
     
 
-    const {carta,setCarta}            = useContext(cartContext)
+    const {carta,setCarta,handleDelete,handleClear}   = useContext(cartContext)
     const [cartafinal, setCartafinal] = useState([])
     const [loading, setLoading]       = useState(false)
     const [listo, setListo]           = useState(false)
@@ -48,15 +48,6 @@ export const Cart = () => {
       phone: telefono
     }
   
-    const handleDelete = (id)=> {
-      setCarta( carta.filter(carta => carta.id !== id)) 
-
-    }
-
-    const handleClear = () => {
-      setCarta([])
-      
-    }
     
     const handlePagar = async () => {
 
@@ -228,16 +219,24 @@ export const Cart = () => {
                             
                           </>
             ) )}
-            <div className="totalfinal">
-                <p className="pagofinal">Total: <span> ${pagarfinal}</span> </p>
-               
-          </div>
+           
             </div>
       
                      <div className="fin">
                           <p className="final"> {userInfo.name} tu ID de compra es <span>"{id}"</span>  </p>
-                          <p> Porfavor espera a que nos contactemos contigo para entregarte tus productos. </p>
-                          <p> Tambien puedes contactarnos por Whatsapp si es que tienes alguna duda </p>
+                          <p> Porfavor contactanos por Whatsapp y envianos el comprobante del deposito y el id de compra. </p>
+                         <div className="datos-banco">
+                         <p> Datos de deposito:</p>
+                         <p>  Nombre: Alvaro Leiva</p>
+                         <p>  Rut: 19.605.692-0</p>
+                         <p>  Banco: Banco Edwards              </p>
+                         <p>     Numero de Cuenta: 00-316-03204-02  </p>
+                         </div>
+                         
+                         <div className="totalfinal">
+                           <p className="pagofinal">Total: <span> ${pagarfinal}</span> </p>
+               
+                        </div>
                           
                           
                           <a href="https://wa.me/56962121886?text=Tengo%20una%20duda%20con%20mi%20compra"  target="_blank" className="btn btn-info animate__animated animate__fadeIn waza"> Contactar por Whatsapp </a>
