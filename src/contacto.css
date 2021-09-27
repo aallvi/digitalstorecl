@@ -1,0 +1,82 @@
+/* Contacto  */
+.contacto{
+
+    border: aqua 2px solid;
+    
+    margin: 10px auto;
+}
+
+.titulo-contacto{
+    margin-top: 10px;
+}
+
+.texto{
+    padding: 10px;
+    margin-top: 40px;
+    font-size: 19px;
+}
+
+.texto span {
+    color: greenyellow;
+    cursor: pointer;
+}
+
+.texto p {
+    text-align: center;
+}
+
+.formularioExitoso {
+    text-align: center;
+    color: rgb(0, 255, 0);
+    font-size: 20px;
+}
+
+.invalidContacto{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+form .btn {
+    justify-content: center;
+}
+
+.formbtn{
+    margin-left: 630px;
+    margin-bottom:40px ;
+}
+
+
+.formulario legend {
+    
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 1rem;
+
+}
+
+
+.form {
+    width: 350px;
+margin-bottom: 30px;
+
+}
+
+.campo {
+display: flex;
+margin-left: 500px;
+margin-bottom: 2rem;
+}
+
+.campo label{
+flex-basis: 8rem;
+
+}
+
+.formulario fieldset {
+   justify-content: center;
+ 
+ }

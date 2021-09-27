@@ -1,0 +1,37 @@
+
+.grid-footer{
+    margin: 0 auto;
+ }
+
+ .grid-footer h3{
+    padding-bottom: 20px;
+ }
+
+ footer span{
+     color: aqua;
+ }
+
+
+.a:hover{
+    
+  color:rgb(0, 221, 250);
+  font-weight: bolder;
+}
+
+
+.grid-footer{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+ }
+
+ .a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    padding: 0;
+    color: white;
+    width: 200px;
+}

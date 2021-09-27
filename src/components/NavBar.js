@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Carrito } from './Carrito'
 import { cartContext } from './useContext'
+import '../navbar.css';
 
 
 export const NavBar = () => {
@@ -17,7 +18,7 @@ export const NavBar = () => {
     return (
     
 
-  <nav className="navbar navbar-expand-lg navbar-black bg-black contenedor-footer">
+  <nav className="navbar navbar-expand-lg navbar-black bg-black contenedor-portada">
           <div className="container-fluid">
                       <Link className="navbar-brand white" exact to="/" >   <img src="https://i.ibb.co/rw5s0By/logo.jpg" alt="logo" width="130" height="90"/>    </Link>
                    

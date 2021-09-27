@@ -1,16 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import '../footer.css';
 
 
 export const Footer = () => {
     return (
-        <footer className="site-footer animate__animated animate__fadeIn mt-10">
+        <footer className=" animate__animated animate__fadeIn mt-10">
  
-        <div className="grid-footer contenedor-footer ">
+        <div className="grid-footer contenedor-portada ">
 
 
                     <div>
-                        <h3>Categorias</h3>
+                        <h3 className="text-center">Categorias</h3>
 
 
                         <nav className="footer-menu">
@@ -24,7 +25,7 @@ export const Footer = () => {
                     </div>
 
                     <div>
-                        <h3>Digital Store</h3>
+                        <h3 className="text-center">Digital Store</h3>
 
                         <nav className="footer-menu">
                             <Link to="/nosotros"  className="a">Nosotros</Link>
@@ -37,7 +38,7 @@ export const Footer = () => {
                     </div>
 
                     <div>
-                        <h3>Soporte</h3>
+                        <h3 className="text-center">Soporte</h3>
                     <nav className="footer-menu">
                             <Link to="/contacto" className="a">Contacto </Link>
                             {/* <Link className="a"> Preguntas Frecuentes </Link> */}

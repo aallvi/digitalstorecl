@@ -5,7 +5,7 @@ import { collection, addDoc } from "firebase/firestore";
 import { getData } from '../firebase.js';
 import moment from 'moment';
 import swal from 'sweetalert';
-
+import '../cart.css';
 
 
 

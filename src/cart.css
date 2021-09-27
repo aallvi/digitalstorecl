@@ -1,0 +1,123 @@
+.pago {
+    margin-left: 30px;
+}
+
+.carttitle{
+    margin-left: 0;
+    margin-bottom: 40px;
+}
+
+.cartcarro{
+    display:grid;
+    grid-template-columns: 2fr 2fr;
+    margin: 0 auto;
+    grid-gap: 80px;
+    }
+
+.carritofinal{
+     margin: 0px auto;
+}
+
+.carrito-vacio{
+    width: 200px;
+  margin-left: 600px;
+}
+
+.carro {
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+.found {
+    margin: 0 auto;
+    margin-left: 25px;
+    margin-bottom: 20px;
+}
+
+.disp {
+    display: flex;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 20px;
+    padding-right: 0px;
+}
+.productocarrito{
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.validar{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+}
+
+.tituloform span{
+    font-weight: bold;
+}
+
+.tituloform{
+    color: aqua;
+}
+
+
+.total{
+    width: 400px;
+    border-top: 1px solid;
+    margin: 0px auto;
+    padding: 0 auto;
+}
+
+.ordenbtn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 145px;
+}
+
+.final span{
+    color: aqua;
+}
+
+
+.totalfinal{
+    max-width: 550px;
+    border-top: 1px solid;
+    margin-top: 30px;
+}
+
+.total span{
+  color: rgb(38, 221, 21);
+}
+.totalfinal span{
+    color: rgb(39, 255, 20);
+  }
+
+  .totalfinal p{
+    margin-top: 20px;
+    margin-left: 240px;
+  }
+
+.total p{
+  margin-top: 20px;
+  margin-bottom: 0px;
+    text-align: center;
+    padding: 0px;
+}
+
+.final{
+    margin-top: 60px;
+    
+}
+
+.datos-banco{
+    color: green;
+}
+
+.fin{
+    margin-bottom: 20px;
+}
+
+.seguircomprando{
+    margin-left: 180px;
+    margin-top: 50px;
+}

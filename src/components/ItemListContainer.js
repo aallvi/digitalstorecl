@@ -13,7 +13,7 @@ export const ItemListContainer = () => {
         <>
       
         
-         <div className="contenedor-catalogo animate__animated animate__fadeIn contenedor cont">
+         <div className="contenedor-catalogo animate__animated animate__fadeIn contenedor">
          <h1 className="text-center"> Productos Destacados </h1>
       
 

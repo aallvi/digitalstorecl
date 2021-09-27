@@ -1,0 +1,26 @@
+.navbar-nav{
+    margin-left: 120px;
+}
+.carrito {
+    margin-right: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    padding-left: 0px;
+}
+
+.collapse li  {
+    margin-right: 70px;
+}
+
+.nav-link{
+    color: #ff00f7;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: rgb(255, 255, 255);
+}
+
+.bagg {
+    color: rgb(72, 255, 0);
+}
