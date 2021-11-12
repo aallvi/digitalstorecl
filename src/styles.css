@@ -82,11 +82,19 @@ margin-top: 30px;
     margin-top: 50px;
 }
 
+.cardi {
+    border-bottom-right-radius: calc(.25rem - 1px);
+    border-bottom-left-radius: calc(.25rem - 1px);
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
 .contenedor{
     border: aqua 2px solid;
     max-width: 1400px;
     margin: 10px auto;
 }
+
 
 .contenedor-portada{
     max-width: 1400px;
@@ -106,6 +114,18 @@ margin-top: 30px;
 .block{
     display:inline-block;
 }
+
+
+/* .mercado {
+    width: 100px;
+    height: 100px;
+    /* margin-bottom: 20px; */
+
+
+/* .mercado img {
+    width: 200px;
+    height: 100px;
+} */
 
 .watsap{
     background: none;

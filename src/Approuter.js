@@ -55,14 +55,6 @@ export const Approuter = () => {
               <Route path="/producto-no-existe" component={Productoerror} />
               <Route path="/categoria-no-existe" component={Categoriaerror} />
 
-
-
-              
-
-        
-
-              
-
               
         </Switch>
         <Footer/>

@@ -28,7 +28,7 @@ export const MainScreen = () => {
 
         
           const getProduct = async () => {
-            const productsCollection = collection(getData(), 'Producto' );
+            const productsCollection = collection(getData(),'Producto');
             const productsSnapshot = await getDocs(productsCollection) ;
             const productsList = productsSnapshot.docs.map(doc =>  ({id:doc.id, ...doc.data()}) );
             
@@ -37,7 +37,7 @@ export const MainScreen = () => {
             setLoading(false)
           };
             getProduct();
-
+             
          
        }, [])
 
@@ -73,6 +73,7 @@ export const MainScreen = () => {
 
             const cantidad = count
 
+            console.log('qe mierda',arr)
             
 
             if (arr) {
@@ -120,7 +121,7 @@ export const MainScreen = () => {
                         }])
 
                 setCount(1)
-
+               
         }
 
 

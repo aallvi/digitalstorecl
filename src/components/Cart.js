@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useRef, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { cartContext } from './useContext'
 import { collection, addDoc } from "firebase/firestore";
@@ -6,6 +6,7 @@ import { getData } from '../firebase.js';
 import moment from 'moment';
 import swal from 'sweetalert';
 import '../cart.css';
+import emailjs from 'emailjs-com';
 
 
 
@@ -19,9 +20,32 @@ export const Cart = () => {
     const [id, setId]                 = useState("")
     const [nombre, setNombre]         = useState('')
     const [email, setEmail]           = useState('')
-    const [remail, setRemail]           = useState('')
+    const [remail, setRemail]         = useState('')
     const [telefono, setTelefono]     = useState('')
-    const [invalid, setInvalid] = useState(false)
+    const [invalid, setInvalid]       = useState(false)
+
+    const form = useRef();
+
+    // const sendEmail = (e) => {
+    //   e.preventDefault();
+  
+    //   const templateParams = {
+    //     name: 'James',
+    //     notes: 'Check this out!',
+    //     destino:'digstorecl@gmail.com'
+    // };
+     
+    // emailjs.send('gmailMessage', 'template_q5aci39', templateParams, 'user_PRmaODro6rr1WCjns5HdL')
+    //     .then(function(response) {
+    //        console.log('SUCCESS!', response.status, response.text);
+    //     }, function(error) {
+    //        console.log('FAILED...', error);
+    //     });
+
+    // console.log('hola')
+
+    // };
+
 
     const onNombreChange =(e) => {
           setNombre(e.target.value)
@@ -80,6 +104,22 @@ export const Cart = () => {
            setCartafinal(carta)
         
         setCarta([])
+
+        const templateParams = {
+          namee: nombre,
+          id: docRef.id,
+          total: apagar ,
+          destino:email
+      };
+       
+      emailjs.send('gmailMessage', 'template_q5aci39', templateParams, 'user_PRmaODro6rr1WCjns5HdL')
+          .then(function(response) {
+             console.log('SUCCESS!', response.status, response.text);
+          }, function(error) {
+             console.log('FAILED...', error);
+          });
+  
+      
      
     }
 
@@ -146,7 +186,7 @@ export const Cart = () => {
           </div>
 
         {carta.length ===0 ? null :
-          <form className="form">
+          <form className="form" >
             <p className="tituloform"> <span>Ingresa</span>  tus datos para contactarnos contigo y entregarte tu compra </p>
                          
                     {invalid ? <p className="validar">  Debes rellenar todos los campos y los emails deben ser iguales </p> : null }
@@ -173,6 +213,17 @@ export const Cart = () => {
                             <input type="text" className="form-control" id="telefono" placeholder="+56 9 64345513"
                             onChange={e => onTelefonoChange(e)}   />
                           </div>
+
+                          
+
+        
+                <p className="total">Total: <span> ${apagar}</span> </p>
+                
+                
+                <input type="submit" onClick={handlePagar} disabled={loading} className="btn btn-success ordenbtn" value="Crear Orden" />
+         
+          
+        
           
     
           </form>
@@ -184,16 +235,7 @@ export const Cart = () => {
 
           </div>
 
-          {carta.length ===0 ? null :
-          <div className="total" >
-                <p>Total: <span> ${apagar}</span> </p>
-                
-                <button onClick={handlePagar}
-                className="btn btn-success animate__animated animate__fadeIn ordenbtn"
-                disabled={loading}> Crear orden </button>
-          </div>
-          
-        }
+         
      
     </div> :   
     

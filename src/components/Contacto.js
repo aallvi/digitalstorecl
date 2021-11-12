@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import '../contacto.css';
+import emailjs from 'emailjs-com';
+
 
 export const Contacto = () => {
 
@@ -9,6 +11,7 @@ export const Contacto = () => {
     const [telefono, setTelefono]     = useState('')
     const [mensaje, setMensaje]     = useState('')
 
+    const form  = useRef()
 
     const onNombreChange =(e) => {
         setNombre(e.target.value)
@@ -43,6 +46,14 @@ const [invalid, setInvalid] = useState(false)
 
         setContacto(true)
 
+        emailjs.sendForm('gmailMessage', 'template_122fctb', form.current ,'user_PRmaODro6rr1WCjns5HdL')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log('ohlaerrror',error);
+        });
+
+
        setTimeout(() => {
 
         setContacto(false)
@@ -76,7 +87,7 @@ const [invalid, setInvalid] = useState(false)
 
             </div>
 
-            <form className="formulario">
+            <form className="formulario" ref={form} onSubmit={contactoo}>
 
                 <fieldset>
                     <legend>Tus Datos</legend>
@@ -86,17 +97,17 @@ const [invalid, setInvalid] = useState(false)
                     {invalid ? <p className="invalidContacto"> Debes rellenar todos los campos</p> : null}
                     <div className="campo">
                     <label for="nombre"> Nombre: </label>
-                    <input id="nombre" type="text" placeholder="Tu nombre" required onChange={e => onNombreChange(e)} />
+                    <input id="nombre" type="text" placeholder="Tu nombre" required onChange={e => onNombreChange(e)} name="from_name" />
             </div>
 
             <div className="campo">
                     <label for="asunto"> Asunto: </label>
-                    <input id="asunto" type="text" placeholder="Tu Asunto" required  onChange={e => onAsuntoChange(e)} />
+                    <input id="asunto" type="text" placeholder="Tu Asunto" required  onChange={e => onAsuntoChange(e)} name="subject" />
              </div>
 
              <div className="campo">
                     <label for="email"> Email: </label>
-                    <input id="email" type="email" placeholder="Tu Email"  required onChange={e => onEmailChange(e)}  />
+                    <input id="email" type="email" placeholder="Tu Email"  required onChange={e => onEmailChange(e)}  name="emails" />
              </div>
 
              <div className="campo">
@@ -107,7 +118,7 @@ const [invalid, setInvalid] = useState(false)
 
              <div className="campo">
                     <label for="fecha"> Mensaje: </label>
-                    <textarea rows="3"  cols="25" required onChange={e => onMensajeChange(e)} ></textarea>
+                    <textarea rows="3"  cols="25" required onChange={e => onMensajeChange(e)} name="message" ></textarea>
              </div>
                     
                     </>
@@ -122,7 +133,7 @@ const [invalid, setInvalid] = useState(false)
                 </fieldset>
 
                 
-                  {contacto ? null :  <input type="submit"  className="btn btn-info formbtn" value="Enviar Formulario" onClick={contactoo} />}
+                  {contacto ? null :  <input type="submit"  className="btn btn-info formbtn" value="Enviar Formulario" />}
            
 
                

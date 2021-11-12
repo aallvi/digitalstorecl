@@ -64,10 +64,16 @@ export const ItemDetail = ({description,title,url,price,stock,usar,id}) => {
               onClick={goBack}>
                  Atras 
               </button>
+
+              
+             
+            
+
                 
 
                 
          </div>
+              
 
 
               </div>

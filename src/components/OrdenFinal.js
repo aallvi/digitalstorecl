@@ -6,8 +6,6 @@ import { Link } from 'react-router-dom'
 export const OrdenFinal = (cartafinal,pagarfinal,volver,userInfo,id) => {
 
    
-
-
     return (
         <div className="animate__animated animate__fadeIn contenedor">
         <h1 className="text-center"> Orden Final  </h1>
