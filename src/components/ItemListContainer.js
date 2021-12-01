@@ -30,7 +30,6 @@ export const ItemListContainer = () => {
 
         <AlgunasCategorias/>
 
-        <Footer/>
 
 
         </>

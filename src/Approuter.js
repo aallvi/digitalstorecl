@@ -58,6 +58,7 @@ export const Approuter = () => {
               
         </Switch>
         
+        <Footer/>
      
 
 <a href="https://wa.me/56962121886?text=Tengo%20una%20duda%20con%20mi%20compra"  target="_blank" className="watsap">  <img src={whatsapp}   alt="watsap" />   </a>
