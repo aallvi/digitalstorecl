@@ -29,7 +29,7 @@ export const ItemDetail = ({description,title,url,price,stock,usar,id}) => {
           <div className="contenedor detail animate__animated animate__fadeIn img detalles" style={{maxWidth:940}}>
         <div className="row no-gutters">
             <div className="col-md-4">
-                <img src={url} className="card-img" alt= {title}  height='300px' />
+                <img src={url} className="card-img" alt= {title}  height='350px' />
                
 
             </div>
@@ -39,7 +39,7 @@ export const ItemDetail = ({description,title,url,price,stock,usar,id}) => {
              <p className="card-text"> 
                  {description} </p>
             <p className="card-text"> 
-                 ${price} </p>
+                Precio: ${price} </p>
              <p className="card-text"> 
                  Stock :{stock} </p>
              <p className="card-text"> 

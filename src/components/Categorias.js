@@ -32,6 +32,12 @@ export const Categorias = () => {
               </Link>
           </div>
 
+          <div className="categorycard mt-5">
+          <Link to='/category/Roblox' className="tarjetascategoria">  <img src="https://i0.wp.com/www.mundoplayers.com/wp-content/uploads/2019/11/d66ae37d46e00a1ecacfe9531986690a.jpg?fit=770%2C404&ssl=1" height='200px' width="300px"  alt="psn plus" />
+              <p className="text-center mt-1 "> Roblox </p>
+              </Link>
+          </div>
+
 
           <div className="categorycard mt-5">
           <Link to='/category/Cursos y Videos descargables' className="tarjetascategoria">  <img src="https://images.pexels.com/photos/38544/imac-apple-mockup-app-38544.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="cursos descargables" height='200px' width="300px" />

@@ -25,6 +25,12 @@ export const AlgunasCategorias = () => {
 
           </div>
 
+          <div className="categorycard mt-5">
+          <Link to='/category/Roblox' className="tarjetascategoria">  <img src="https://i0.wp.com/www.mundoplayers.com/wp-content/uploads/2019/11/d66ae37d46e00a1ecacfe9531986690a.jpg?fit=770%2C404&ssl=1" height='200px' width="300px"  alt="psn plus" />
+              <p className="text-center mt-1 "> Roblox </p>
+              </Link>
+          </div>
+
 
           <div className="categorycard mt-5">
           <Link to='/category/PSN Plus' className="tarjetascategoria">  <img src="https://i.blogs.es/0a84fe/ps-plus/1366_2000.jpeg" height='200px' width="300px" alt="psn plus"  />

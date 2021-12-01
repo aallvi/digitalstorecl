@@ -24,7 +24,7 @@ export const Mostrarcat = ({id,title,description,url,price,stock}) => {
                             <p className="card-text"> 
                                 {description} </p>
                             <p className="card-text"> 
-                                ${price} </p>
+                               Precio: ${price} </p>
                                 <p className="card-text"> 
                                 Stock: {stock} </p>
                         

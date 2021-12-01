@@ -87,6 +87,7 @@ margin-top: 30px;
     border-bottom-left-radius: calc(.25rem - 1px);
     border-top-left-radius: calc(.25rem - 1px);
     border-top-right-radius: calc(.25rem - 1px);
+    margin-right: 10;
 }
 
 .contenedor{
@@ -191,4 +192,8 @@ margin-top: 30px;
 .tarjetascategoria{
     text-decoration: none;
     color: white;
+}
+
+.mercado{ 
+    align-self: center;
 }
